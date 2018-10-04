@@ -57,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;37m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -82,10 +82,11 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
-    alias ws='cd workspace'
+    alias ws='cd /home/yihongliu/workspace'
     alias winf='cd /mnt/c/users/yihon'
     alias wind='cd /mnt/c/users/yihon/Desktop'
     alias windc='cd /mnt/c/users/yihon/Documents'
+    alias winws='cd /mnt/c/users/yihon/Desktop/Workspace'
 fi
 
 # colored GCC warnings and errors
@@ -119,3 +120,4 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+echo -e -n "\x1b[\x30 q" # changes to blinking block
